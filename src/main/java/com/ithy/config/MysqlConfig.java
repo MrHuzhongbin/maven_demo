@@ -12,6 +12,8 @@ public class MysqlConfig {
             InputStream resourceAsStream = MysqlConfig.class.getClassLoader().getResourceAsStream("mysql.properties");
             Properties properties = new Properties();
             properties.load(resourceAsStream);
+            DruidDataSource druidDataSource = new DruidDataSource();
+            druidDataSource.setUsername(properties.getProperty("username"));
         } catch (IOException e) {
             e.printStackTrace();
         }
